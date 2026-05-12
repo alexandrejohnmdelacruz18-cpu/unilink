@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Vite / build output
+dist/
+.vite/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+*.tmp
+
+node_modules/
+dist/

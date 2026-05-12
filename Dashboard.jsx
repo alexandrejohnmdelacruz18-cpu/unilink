@@ -1,11 +1,11 @@
 // src/pages/Dashboard.jsx
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { useAuth } from '../AuthContext';
-import { supabase } from '../supabaseClient';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import { useAuth } from './AuthContext';
+import { supabase } from './supabaseClient';
 import { BarChart3, Package, Heart, ShoppingCart, Loader2 } from 'lucide-react';
-import '../styles/Dashboard.css';
+import './Dashboard.css';
 
 const Dashboard = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

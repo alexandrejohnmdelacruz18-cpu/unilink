@@ -1,10 +1,10 @@
 // src/pages/Cart.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 import { ShoppingCart, ArrowRight } from 'lucide-react';
-import '../styles/AccountSettings.css';
+import './AccountSettings.css';
 
 const Cart = ({ sidebarCollapsed, onToggleSidebar }) => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, Shield, Moon, CreditCard, Bell, LogOut, Globe } from 'lucide-react';
-import '../styles/Settings.css'; // Ensure you create this CSS file
+import './Settings.css'; // Ensure you create this CSS file
 
 const Settings = ({ onClose, onLogout }) => {
   // State for active tab

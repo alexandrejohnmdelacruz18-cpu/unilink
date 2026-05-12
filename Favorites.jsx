@@ -1,12 +1,12 @@
 // src/pages/Favorites.jsx
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { X, ShoppingCart, MessageCircle, Heart, HeartCrack, Briefcase, User } from 'lucide-react';
-import '../styles/Home.css';
+import './Home.css';
 
 const Favorites = ({ sidebarCollapsed, onToggleSidebar }) => {
   const [favoriteListings, setFavoriteListings] = useState([]);

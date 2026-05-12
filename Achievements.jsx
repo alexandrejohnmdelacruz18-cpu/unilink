@@ -1,12 +1,12 @@
 // src/pages/Achievements.jsx
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
 import { Trophy, Star, ShieldCheck, Zap, Heart, MessageCircle, Lock } from 'lucide-react';
-import '../styles/AccountSettings.css'; // Your global layout styles
-import '../styles/Achievements.css';
+import './AccountSettings.css'; // Your global layout styles
+import './Achievements.css';
 
 const Achievements = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

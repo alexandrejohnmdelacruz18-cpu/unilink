@@ -1,12 +1,12 @@
 // src/pages/Report.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 import { Star, Flag, ShieldCheck } from 'lucide-react';
-import '../styles/AccountSettings.css';
-import '../styles/Reviews.css'; // Import the new CSS
+import './AccountSettings.css';
+import './Reviews.css'; // Import the new CSS
 
 const Report = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

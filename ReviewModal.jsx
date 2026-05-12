@@ -1,8 +1,8 @@
 // src/components/ReviewModal.jsx
 import React, { useState } from 'react';
 import { Star, X } from 'lucide-react';
-import { supabase } from '../supabaseClient';
-import '../styles/Reviews.css';
+import { supabase } from './supabaseClient';
+import './Reviews.css';
 
 const ReviewModal = ({ transaction, currentUser, onClose, onReviewSubmitted }) => {
   const [rating, setRating] = useState(0);

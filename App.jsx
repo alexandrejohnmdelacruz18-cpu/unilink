@@ -1,27 +1,25 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './AuthContext';
-import Auth from './pages/Auth';
-import ProtectedRoute from './components/ProtectedRoute'; // 1. Import the bouncer
-import Dashboard from './pages/Dashboard';
+import Auth from './Auth';
+import ProtectedRoute from './ProtectedRoute'; // 1. Import the bouncer
+import Dashboard from './Dashboard';
 
 // Pages
-import Home from './pages/Home';
-import Messages from './pages/Messages';
-import Post from './pages/Post';
-import Profile from './pages/Profile';
-import Auth from './pages/Auth';
-import Quests from './pages/Quests';
-import Achievements from './pages/Achievements';
-import AccountSettings from './pages/AccountSettings';
-import Favorites from './pages/Favorites';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import EditListing from './pages/EditListing';
-import TransactionDashboard from './pages/TransactionDashboard';
+import Home from './Home';
+import Messages from './Messages';
+import Post from './Post';
+import Profile from './Profile';
+import Quests from './Quests';
+import Achievements from './Achievements';
+import AccountSettings from './AccountSettings';
+import Favorites from './Favorites';
+import Cart from './Cart';
+import Checkout from './Checkout';
+import EditListing from './EditListing';
+import TransactionDashboard from './TransactionDashboard';
 
 const AppContent = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);

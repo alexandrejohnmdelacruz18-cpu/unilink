@@ -1,12 +1,12 @@
 // src/pages/Quests.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 import { Target, CheckCircle, Clock, Star } from 'lucide-react';
-import '../styles/AccountSettings.css'; 
-import '../styles/Quests.css'; 
+import './AccountSettings.css'; 
+import './Quests.css'; 
 
 const Quests = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

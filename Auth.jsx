@@ -1,9 +1,9 @@
 // src/pages/Auth.jsx
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from './supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import { Globe } from 'lucide-react';
-import '../styles/AccountSettings.css'; // Make sure this imports your global styles/dark mode
+import './AccountSettings.css'; // Make sure this imports your global styles/dark mode
 
 const Auth = () => {
   const navigate = useNavigate();

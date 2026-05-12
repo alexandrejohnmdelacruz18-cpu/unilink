@@ -1,16 +1,16 @@
 // src/pages/Home.jsx
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { 
   X, ShoppingCart, MessageCircle, Heart, Edit, 
   LayoutGrid, BookOpen, Shirt, Beaker, Bed, Laptop, Briefcase, User, Package
 } from 'lucide-react';
-import '../styles/Home.css';
-import ImageCarousel from '../components/ImageCarousel';
+import './Home.css';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import ImageCarousel from './ImageCarousel';
 
 const Home = ({ sidebarCollapsed, onToggleSidebar }) => {
   const [listings, setListings] = useState([]);

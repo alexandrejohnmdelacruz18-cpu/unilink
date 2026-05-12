@@ -1,14 +1,14 @@
 // src/pages/AccountSettings.jsx
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
 import { 
   CheckCircle, AlertCircle, GraduationCap, 
   Save, User as UserIcon, Camera, Moon, Sun, Mail 
 } from 'lucide-react';
-import '../styles/AccountSettings.css'; 
+import './AccountSettings.css'; 
 
 const AccountSettings = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

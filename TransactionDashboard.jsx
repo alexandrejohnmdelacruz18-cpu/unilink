@@ -1,16 +1,16 @@
 // src/pages/TransactionDashboard.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import ReviewModal from '../components/ReviewModal';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import ReviewModal from './ReviewModal';
 import { 
   Package, Banknote, Repeat, CheckCircle, 
   Clock, AlertTriangle, Truck, ArrowRight, Star
 } from 'lucide-react';
-import '../styles/AccountSettings.css';
+import './AccountSettings.css';
 
 const TransactionDashboard = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

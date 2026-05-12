@@ -1,9 +1,9 @@
 // src/components/Topbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Search, SlidersHorizontal, Heart, ShoppingCart } from 'lucide-react';
-import { useAuth } from '../AuthContext';
+import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '../supabaseClient'; // Added Supabase import!
+import { supabase } from './supabaseClient'; // Added Supabase import!
 
 const Topbar = ({ onToggleSidebar, hideSearch, onSearchChange, onFilterChange, currentFilters }) => {
   const [showFilters, setShowFilters] = useState(false);

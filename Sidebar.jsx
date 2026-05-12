@@ -1,13 +1,13 @@
 // src/components/Sidebar.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../AuthContext';
+import { useAuth } from './AuthContext';
 import { 
   Home, MessageSquare, PlusSquare, Heart, 
   User, Settings, Target, Award, Flag, LogOut,
   ChevronDown, ShoppingBag, PanelLeftClose, PanelLeftOpen
 } from 'lucide-react';
-import '../styles/Sidebar.css';
+import './Sidebar.css';
 
 // Added onToggleCollapse to the props
 const Sidebar = ({ currentTab, collapsed, onToggleCollapse }) => {

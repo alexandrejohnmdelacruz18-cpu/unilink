@@ -1,12 +1,12 @@
 // src/pages/Checkout.jsx
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 import { Banknote, Repeat, CheckCircle, Package, ArrowRight } from 'lucide-react';
-import '../styles/AccountSettings.css'; // Reusing your beautiful dark mode card styles
+import './AccountSettings.css'; // Reusing your beautiful dark mode card styles
 
 const Checkout = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();

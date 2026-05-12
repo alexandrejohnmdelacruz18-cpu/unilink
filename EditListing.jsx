@@ -1,12 +1,12 @@
 // src/pages/EditListing.jsx
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { supabase } from '../supabaseClient';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import { supabase } from './supabaseClient';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Banknote, PackageOpen, Handshake, AlertCircle, Trash2, CheckCircle } from 'lucide-react';
-import '../styles/AccountSettings.css'; 
-import '../styles/Post.css'; 
+import { Banknote, PackageOpen, User, AlertCircle, Trash2, CheckCircle } from 'lucide-react';
+import './AccountSettings.css'; 
+import './Post.css'; 
 
 const EditListing = ({ sidebarCollapsed, onToggleSidebar }) => {
   const location = useLocation();
@@ -164,7 +164,7 @@ const EditListing = ({ sidebarCollapsed, onToggleSidebar }) => {
               <div className="trade-options-grid" style={{ marginTop: '15px' }}>
                 <button type="button" className={`trade-option-btn ${tradeOptions.cash ? 'selected' : ''}`} onClick={() => toggleTradeOption('cash')}><Banknote size={20} /> Accept Cash</button>
                 <button type="button" className={`trade-option-btn ${tradeOptions.product ? 'selected' : ''}`} onClick={() => toggleTradeOption('product')}><PackageOpen size={20} /> Accept Items</button>
-                <button type="button" className={`trade-option-btn ${tradeOptions.service ? 'selected' : ''}`} onClick={() => toggleTradeOption('service')}><Handshake size={20} /> Accept Services</button>
+                <button type="button" className={`trade-option-btn ${tradeOptions.service ? 'selected' : ''}`} onClick={() => toggleTradeOption('service')}><User size={20} /> Accept Services</button>
               </div>
 
               {(tradeOptions.cash || tradeOptions.product || tradeOptions.service) && (

@@ -1,12 +1,12 @@
 // src/pages/Messages.jsx
 import React, { useState, useEffect, useRef } from 'react';
-import { supabase } from '../supabaseClient';
-import { useAuth } from '../AuthContext';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
+import { supabase } from './supabaseClient';
+import { useAuth } from './AuthContext';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 import { Search, Send, MessageSquare } from 'lucide-react';
-import '../styles/AccountSettings.css'; // Make sure your new CSS is loaded!
-import '../styles/Messages.css'; 
+import './AccountSettings.css'; // Make sure your new CSS is loaded!
+import './Messages.css'; 
 const Messages = ({ sidebarCollapsed, onToggleSidebar }) => {
   const { user } = useAuth();
   

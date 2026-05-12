@@ -1,12 +1,12 @@
 // src/pages/Post.jsx
 import React, { useState, useRef } from 'react';
-import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
-import { CheckCircle, Camera, X, Banknote, PackageOpen, Handshake, AlertCircle } from 'lucide-react';
-import '../styles/AccountSettings.css'; 
-import '../styles/Post.css'; 
-import { useAuth } from '../AuthContext';
-import { supabase } from '../supabaseClient';
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import { CheckCircle, Camera, X, Banknote, PackageOpen, User, AlertCircle } from 'lucide-react';
+import './AccountSettings.css'; 
+import './Post.css'; 
+import { useAuth } from './AuthContext';
+import { supabase } from './supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
 const Post = ({ sidebarCollapsed, onToggleSidebar }) => {
@@ -188,7 +188,7 @@ const handleSubmit = async (e) => {
                 onClick={() => { setListingType('service'); setCategory(''); setCondition(''); }}
                 style={{ flex: 1, padding: '20px' }}
               >
-                <Handshake size={24} /> I'm offering a Service
+                <User size={24} /> I'm offering a Service
               </button>
             </div>
 
