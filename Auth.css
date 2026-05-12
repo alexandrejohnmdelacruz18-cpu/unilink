@@ -1,0 +1,46 @@
+/* src/styles/Auth.css */
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #e2e8f0;
+}
+
+.auth-title {
+  text-align: center;
+  color: #610C9F; /* Custom Purple Logo/Title */
+  margin-bottom: 30px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #610C9F; /* Custom Purple Button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background-color: #940B92; /* Custom Magenta Hover */
+}
+
+body.dark-mode .auth-container { background-color: #030637 !important; }
+body.dark-mode .auth-card { background-color: #3C0753 !important; border-color: #720455 !important; }
+body.dark-mode .auth-title { color: white !important; }

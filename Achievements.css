@@ -1,0 +1,110 @@
+/* src/styles/Achievements.css */
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  /* Removed hardcoded background/borders here so the 'section-card' class can handle dark mode perfectly */
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+}
+
+.achievement-card.locked {
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+
+.lock-icon-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #94a3b8;
+}
+
+.achievement-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.achievement-title {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.achievement-rarity {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.rarity-legendary { color: #DA0C81; } 
+.rarity-rare { color: #940B92; }      
+.rarity-common { color: #4f6cff; }
+
+.achievement-desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.achievement-status {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.status-unlocked { 
+  background: rgba(97, 12, 159, 0.1);
+  color: #610C9F; 
+} 
+.status-locked { 
+  background: #f1f5f9;
+  color: #94a3b8; 
+}
+
+/* --- TRUE BLACK DARK MODE OVERRIDES --- */
+body.dark-theme .achievement-card.locked {
+  opacity: 0.5;
+}
+
+body.dark-theme .achievement-icon-wrapper {
+  background-color: #1e293b !important;
+}
+
+body.dark-theme .achievement-desc {
+  color: #94a3b8;
+}
+
+body.dark-theme .status-unlocked {
+  background: rgba(233, 87, 147, 0.1);
+  color: #E95793;
+}
+
+body.dark-theme .status-locked {
+  background: #334155;
+  color: #94a3b8;
+}

@@ -1,0 +1,221 @@
+/* src/styles/Favorites.css */
+
+.favorites-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 0 5px;
+}
+
+.favorites-header h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.8rem;
+}
+
+.favorites-header p {
+  margin: 5px 0 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+/* Reusing a sleek card style for the items */
+.favorite-item-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.favorite-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.favorite-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: #f1f5f9;
+}
+
+.unfavorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.unfavorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.favorite-details {
+  padding: 20px;
+}
+
+.favorite-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #610C9F; /* Custom Deep Purple */
+  margin: 0 0 5px 0;
+}
+
+.favorite-title {
+  margin: 0 0 10px 0;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.empty-favorites {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+}
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-mode .favorite-item-card,
+body.dark-mode .empty-favorites {
+  background-color: #3C0753 !important;
+  border-color: #720455 !important;
+}
+
+body.dark-mode .favorite-price {
+  color: #E95793 !important; /* Brighter pink for dark mode contrast */
+}
+
+body.dark-mode .unfavorite-btn {
+  background-color: #030637;
+}/* src/styles/Favorites.css */
+
+.favorites-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 0 5px;
+}
+
+.favorites-header h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.8rem;
+}
+
+.favorites-header p {
+  margin: 5px 0 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+/* Reusing a sleek card style for the items */
+.favorite-item-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.favorite-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.favorite-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: #f1f5f9;
+}
+
+.unfavorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.unfavorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.favorite-details {
+  padding: 20px;
+}
+
+.favorite-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #610C9F; /* Custom Deep Purple */
+  margin: 0 0 5px 0;
+}
+
+.favorite-title {
+  margin: 0 0 10px 0;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.empty-favorites {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+}
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-mode .favorite-item-card,
+body.dark-mode .empty-favorites {
+  background-color: #3C0753 !important;
+  border-color: #720455 !important;
+}
+
+body.dark-mode .favorite-price {
+  color: #E95793 !important; /* Brighter pink for dark mode contrast */
+}
+
+body.dark-mode .unfavorite-btn {
+  background-color: #030637;
+}

@@ -1,0 +1,535 @@
+/* This targets the main wrapper of every page */
+.app-container, 
+.post-page-container, 
+.messages-page-container,
+.profile-page-container {
+    display: flex;          /* The magic wand: puts items side-by-side */
+    flex-direction: row;    /* Ensures they stay in a row */
+    min-height: 100vh;      /* Full screen height */
+    width: 100vw;           /* Full screen width */
+    overflow-x: hidden;     /* Prevents awkward side-scrolling */
+    background-color: #f8fafc; /* Subtle background for the whole app */
+}
+
+/* Ensure the main content area grows to fill the remaining space */
+.main-content, 
+.post-main-content, 
+.messages-layout {
+    flex: 1;                /* Take up all space not used by the sidebar */
+    height: 100vh;          /* Match the sidebar height */
+    overflow-y: auto;       /* Let this area scroll independently */
+    padding: 20px;          /* Give your content some breathing room */
+}
+
+/* Ensure the sidebar doesn't shrink or get squished */
+/* --- SIDEBAR BASE STYLES --- */
+.sidebar {
+  /* ... keep your existing background colors and borders ... */
+  height: 100vh; /* Forces it to be exactly the height of the screen */
+  overflow-y: auto; /* Enables vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease; /* Smooth animation when collapsing */
+}
+
+/* Optional: Hide the scrollbar for a cleaner, app-like look */
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Ensure the nav takes up the middle space, pushing Log Out to the bottom */
+.sidebar-nav {
+  flex: 1;
+}
+
+/* This forces the cards into a neat, responsive grid */
+.listings-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* The magic rule */
+  gap: 20px;
+  width: 100%;
+}
+
+/* =========================================
+   LIGHT MODE ACCENTS (Palette 1) 
+   Colors: #610C9F, #940B92, #DA0C81, #E95793
+========================================= */
+
+/* Update buttons and active states to use the new Light Palette */
+button[type="submit"],
+.save-btn, 
+.send-btn, 
+.add-listing-btn, 
+.category-card.active {
+  background-color: #610C9F !important;
+  color: white !important;
+  border-color: #610C9F !important;
+}
+
+button[type="submit"]:hover,
+.save-btn:hover, 
+.send-btn:hover {
+  background-color: #940B92 !important;
+}
+
+/* Accents like the Student Tag and Notification Badges */
+.student-tag {
+  background-color: #E95793 !important;
+  color: white !important;
+}
+
+.badge {
+  background-color: #DA0C81 !important;
+  color: white !important;
+}
+
+/* Make sure Sidebar icons and Logo use the theme */
+.logo-text { color: #610C9F !important; }
+.nav-item.active { color: #940B92 !important; }
+
+
+/* =========================================
+   DARK MODE OVERRIDES (Palette 2) 
+   Colors: #030637, #3C0753, #720455, #910A67
+========================================= */
+
+body.dark-mode {
+  background-color: #030637 !important; /* Deepest Navy for the main background */
+  color: #ffffff !important;
+}
+
+/* Apply Dark Indigo to all panels, sidebars, and cards */
+body.dark-mode .app-container,
+body.dark-mode .post-page-container,
+body.dark-mode .messages-page-container,
+body.dark-mode .profile-page-container,
+body.dark-mode .sidebar,
+body.dark-mode .topbar,
+body.dark-mode .main-content,
+body.dark-mode .section-card,
+body.dark-mode .profile-card,
+body.dark-mode .stat-card,
+body.dark-mode .create-form-container,
+body.dark-mode .messages-layout,
+body.dark-mode .conversations-sidebar,
+body.dark-mode .chat-window,
+body.dark-mode .chat-header,
+body.dark-mode .chat-input-area {
+  background-color: #3C0753 !important; /* Dark Indigo Panels */
+  border-color: #720455 !important;    /* Deep Magenta Borders */
+  color: #ffffff !important;
+}
+
+/* FIX INVISIBLE TEXT: 
+  This forces all your inline grey text to become white/light-grey in dark mode 
+*/
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode label,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li {
+  color: #f8fafc !important; 
+}
+
+/* Fix Inputs & Textareas for Dark Mode */
+body.dark-mode input, 
+body.dark-mode textarea, 
+body.dark-mode select {
+  background-color: #030637 !important; /* Dark Navy to contrast inside the Indigo cards */
+  border: 1px solid #720455 !important;
+  color: #ffffff !important;
+}
+
+/* Fix disabled inputs (like the un-editable university email field) */
+body.dark-mode input:disabled {
+  background-color: #3C0753 !important;
+  color: #cbd5e1 !important; /* Light grey so it is readable but looks disabled */
+  border: 1px dashed #720455 !important;
+}
+
+/* Dark Mode Buttons (Using the Plum accent) */
+body.dark-mode button[type="submit"],
+body.dark-mode .save-btn, 
+body.dark-mode .send-btn, 
+body.dark-mode .add-listing-btn, 
+body.dark-mode .category-card.active {
+  background-color: #910A67 !important; /* Plum Button */
+  color: white !important;
+  border: none !important;
+}
+
+body.dark-mode button[type="submit"]:hover,
+body.dark-mode .save-btn:hover {
+  background-color: #720455 !important;
+}
+
+/* Accents in Dark Mode */
+body.dark-mode .student-tag,
+body.dark-mode .badge {
+  background-color: #910A67 !important;
+  color: white !important; 
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.lucide-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* --- GLOBAL DARK MODE STYLES --- */
+body.dark-theme {
+  background-color: #000000;
+  color: #f8fafc;
+}
+
+body.dark-theme .app-container {
+  background-color: #000000;
+}
+
+/* Deep charcoal for the cards and sidebars so they don't blend into the background */
+body.dark-theme .sidebar,
+body.dark-theme .topbar,
+body.dark-theme .main-content,
+body.dark-theme .section-card,
+body.dark-theme .modal-card,
+body.dark-theme .favorite-item-card,
+body.dark-theme .checkout-card,
+body.dark-theme .order-summary-card {
+  background-color: #121212;
+  border-color: #262626;
+  color: #f8fafc;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme .input-label {
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme p,
+body.dark-theme .sidebar-item,
+body.dark-theme .sidebar-sub-item {
+  color: #94a3b8;
+}
+
+/* Darken inputs and dropdowns */
+body.dark-theme .form-input,
+body.dark-theme .form-textarea,
+body.dark-theme select.form-input {
+  background-color: #000000;
+  border-color: #262626;
+  color: #f8fafc;
+}
+
+/* Hover & Active states */
+body.dark-theme .sidebar-item:hover,
+body.dark-theme .sidebar-sub-item:hover {
+  background-color: #1f1f1f;
+  color: #c084fc;
+}
+
+body.dark-theme .sidebar-item.active,
+body.dark-theme .sidebar-sub-item.active {
+  background-color: #3b0764; 
+  color: #e9d5ff;
+}
+
+body.dark-theme .student-tag {
+  background-color: #1f1f1f;
+  color: #cbd5e1;
+  border-color: #333333;
+}
+
+body.dark-theme .search-container,
+body.dark-theme .filter-toggle-btn,
+body.dark-theme .filter-dropdown {
+  background-color: #121212 !important;
+  border-color: #262626 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .search-container input { color: #f1f5f9 !important; }
+body.dark-theme .search-container input::placeholder { color: #94a3b8 !important; }
+body.dark-theme .filter-dropdown h3, body.dark-theme .filter-dropdown label { color: #f1f5f9 !important; }
+body.dark-theme .topbar span, body.dark-theme .topbar p, body.dark-theme .topbar div[style*="color"] { color: #cbd5e1 !important; }
+
+/* Stubborn Inner Boxes (Trade info, Email box, etc.) */
+body.dark-theme div[style*="background: #f5f3ff"],
+body.dark-theme div[style*="background: #f1f5f9"],
+body.dark-theme div[style*="background: #f8fafc"],
+body.dark-theme div[style*="background-color: #f1f5f9"],
+body.dark-theme .modal-info div[style*="background"] {
+  background-color: #0a0a0a !important; /* Extremely dark grey for inner boxes */
+  border-color: #262626 !important;
+}
+
+/* Modal Text Fixes */
+body.dark-theme .modal-info h4, body.dark-theme .modal-info div[style*="background"] h4 { color: #e9d5ff !important; }
+body.dark-theme .modal-info ul, body.dark-theme .modal-info li, body.dark-theme .modal-info p, body.dark-theme .modal-info div[style*="background"] ul, body.dark-theme .modal-info div[style*="background"] li { color: #cbd5e1 !important; }
+body.dark-theme .modal-info div[style*="background"] b { color: #f1f5f9 !important; }
+body.dark-theme .modal-price, body.dark-theme .card-price, body.dark-theme div[style*="color: #610C9F"], body.dark-theme p[style*="color: #610C9F"] { color: #c084fc !important; }
+body.dark-theme .seller-tag, body.dark-theme small[style*="color"], body.dark-theme span[style*="color: #610C9F"] { color: #e9d5ff !important; }
+
+/* Category Tabs */
+body.dark-theme .category-tab { background-color: #121212 !important; border-color: #262626 !important; color: #f1f5f9 !important; }
+body.dark-theme .category-tab h3 { color: #f1f5f9 !important; }
+body.dark-theme .category-tab span, body.dark-theme .category-tab-subtitle { color: #94a3b8 !important; }
+body.dark-theme .category-tab:hover { background-color: #1f1f1f !important; }
+body.dark-theme .category-tab.active { background-color: #3b0764 !important; border-color: #610C9F !important; }
+
+/* Image Backgrounds & Radio Buttons */
+body.dark-theme .modal-image, body.dark-theme .image-container, body.dark-theme .radio-option { background-color: #000000 !important; border-color: #262626 !important; }
+body.dark-theme .radio-option.selected { background-color: #3b0764 !important; border-color: #610C9F !important; }
+
+/* Scrollbar */
+.categories-container::-webkit-scrollbar, .category-scroll::-webkit-scrollbar, div[style*="overflow-x: auto"]::-webkit-scrollbar { height: 6px; }
+div[style*="overflow-x: auto"]::-webkit-scrollbar-track { background: transparent; }
+div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+body.dark-theme div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb { background-color: #333333; }
+
+/* --- DARK MODE CONTRAST & LEGIBILITY FIXES --- */
+
+/* 1. Topbar Text (The user email) */
+body.dark-theme .topbar span,
+body.dark-theme .topbar p,
+body.dark-theme .topbar div[style*="color"] {
+  color: #cbd5e1 !important; /* Light slate for readability */
+}
+
+/* 2. Inactive Category Tabs */
+body.dark-theme .category-tab {
+  color: #f1f5f9 !important; /* Make the main tab text white */
+}
+body.dark-theme .category-tab h3 {
+  color: #f1f5f9 !important;
+}
+body.dark-theme .category-tab span {
+  color: #94a3b8 !important; /* Make the subtitle light grey */
+}
+
+/* 3. Product Card Prices (Changes invisible dark purple to bright neon purple) */
+body.dark-theme .card-price,
+body.dark-theme div[style*="color: #610C9F"],
+body.dark-theme p[style*="color: #610C9F"] {
+  color: #c084fc !important; /* Bright pastel purple that pops on dark backgrounds */
+}
+
+/* 4. The "Yours" Seller Tag & Small Links */
+body.dark-theme .seller-tag,
+body.dark-theme small[style*="color"],
+body.dark-theme span[style*="color: #610C9F"] {
+  color: #e9d5ff !important; /* Very soft light purple */
+}
+
+/* 5. Fix the Ugly Category Scrollbar (Applies to both Light and Dark mode) */
+.categories-container::-webkit-scrollbar,
+.category-scroll::-webkit-scrollbar,
+div[style*="overflow-x: auto"]::-webkit-scrollbar {
+  height: 6px;
+}
+div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+/* Darken the scrollbar thumb for dark mode */
+body.dark-theme div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+  background-color: #475569; 
+}
+
+/* --- SPECIFIC MODAL LEGIBILITY FIXES --- */
+
+/* 1. Fix the dark Price tag */
+body.dark-theme .modal-price {
+  color: #c084fc !important; /* Bright neon purple */
+}
+
+/* 2. Fix the Description body text */
+body.dark-theme .modal-info p {
+  color: #cbd5e1 !important; /* Bright readable slate */
+}
+
+/* 3. Force the Trade Methods box to become dark */
+body.dark-theme .modal-info div[style*="background"] {
+  background-color: #0f172a !important; /* Deep dark slate */
+  border-color: #334155 !important;
+}
+
+/* 4. Fix the text colors INSIDE the Trade Methods box */
+body.dark-theme .modal-info div[style*="background"] h4 {
+  color: #e9d5ff !important; /* Bright pastel purple for the header */
+}
+
+body.dark-theme .modal-info div[style*="background"] ul,
+body.dark-theme .modal-info div[style*="background"] li {
+  color: #cbd5e1 !important; /* Light slate for the list items */
+}
+
+body.dark-theme .modal-info div[style*="background"] b {
+  color: #f1f5f9 !important; /* Crisp white for bold labels like "Cash:" */
+}
+
+/* --- TRANSACTION DASHBOARD TAB & TEXT FIXES --- */
+
+.transaction-tabs-container {
+  display: flex;
+  background: #f1f5f9; /* Soft light gray for light mode */
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.transaction-tab {
+  padding: 10px 20px;
+  background: transparent;
+  color: #64748b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* The active tab in light mode */
+.transaction-tab.active {
+  background: #ffffff;
+  color: #610C9F; /* UniLink purple */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.empty-state-title {
+  color: #1e293b; /* Dark text for light mode */
+  margin: 0 0 10px 0;
+}
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-theme .transaction-tabs-container {
+  background: #0a0a0a;
+  border-color: #262626;
+}
+
+body.dark-theme .transaction-tab.active {
+  background: #1e293b;
+  color: #f8fafc;
+  box-shadow: none;
+}
+
+body.dark-theme .empty-state-title {
+  color: #f1f5f9; /* Bright text for dark mode */
+}
+
+/* --- PREMIUM LISTING CARD --- */
+.listing-card-modern {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3; /* Keeps all images a uniform shape */
+  background: #f1f5f9;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The Floating Heart Button */
+.btn-favorite-float {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #94a3b8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-favorite-float:hover {
+  transform: scale(1.1);
+  color: #ef4444; /* Turns red on hover */
+}
+
+.btn-favorite-float.active {
+  color: #ef4444;
+}
+
+/* Clean Category Pill */
+.category-pill {
+  display: inline-block;
+  background: #fdf4ff;
+  color: #c026d3;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  max-width: 100%; /* Prevents stretching */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds the "..." */
+}
+
+/* --- CAROUSEL STYLES --- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.carousel-btn:hover { background: #ffffff; }
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-theme .listing-card-modern { background: #121212; border-color: #262626; }
+body.dark-theme .category-pill { background: rgba(192, 38, 211, 0.1); color: #e879f9; }
+body.dark-theme .btn-favorite-float { background: rgba(0, 0, 0, 0.6); color: #94a3b8; }

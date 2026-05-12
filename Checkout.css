@@ -1,0 +1,135 @@
+/* src/styles/Checkout.css */
+
+.checkout-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .checkout-layout {
+    flex-direction: column-reverse;
+  }
+}
+
+.checkout-form-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.checkout-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 25px;
+}
+
+.checkout-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 15px;
+}
+
+/* Custom Radio Buttons for Meetup/Payment */
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option:hover {
+  border-color: #610C9F;
+  background-color: #f8fafc;
+}
+
+.radio-option.selected {
+  border-color: #610C9F;
+  background-color: #f5f3ff;
+  box-shadow: 0 0 0 1px #610C9F;
+}
+
+.radio-option input[type="radio"] {
+  accent-color: #610C9F;
+  width: 18px;
+  height: 18px;
+}
+
+.radio-option-text h4 {
+  margin: 0 0 5px 0;
+  color: #1e293b;
+}
+
+.radio-option-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.confirm-order-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #610C9F;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.confirm-order-btn:hover:not(:disabled) {
+  background-color: #940B92;
+}
+
+.confirm-order-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-mode .checkout-card {
+  background-color: #3C0753 !important;
+  border-color: #720455 !important;
+}
+
+body.dark-mode .checkout-card h3 {
+  border-color: #720455 !important;
+}
+
+body.dark-mode .radio-option {
+  border-color: #720455 !important;
+}
+
+body.dark-mode .radio-option:hover {
+  border-color: #DA0C81 !important;
+  background-color: #030637 !important;
+}
+
+body.dark-mode .radio-option.selected {
+  border-color: #DA0C81 !important;
+  background-color: #030637 !important;
+  box-shadow: 0 0 0 1px #DA0C81 !important;
+}
+
+body.dark-mode .radio-option input[type="radio"] {
+  accent-color: #E95793 !important;
+}

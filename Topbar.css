@@ -1,0 +1,153 @@
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.menu-icon {
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+    max-width: 520px;
+    width: 100%;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 13px 44px 13px 44px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #610C9F !important; /* Deep Purple */ 
+  box-shadow: 0 0 0 3px rgba(97, 12, 159, 0.1) !important; /* Subtle purple glow */
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.action-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    padding: 10px 14px;
+    box-shadow: 0 10px 25px rgba(79, 108, 255, 0.08);
+}
+
+.action-item span {
+    font-size: 0.95rem;
+}
+
+.badge {
+    background: #ff6b6b;
+    color: white;
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+
+.avatar-button {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    padding: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid var(--border);
+}
+
+.avatar-button:hover {
+    box-shadow: 0 10px 25px rgba(79, 108, 255, 0.12);
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 720px) {
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topbar-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+body.dark-mode .search-container input:focus {
+  border-color: #940B92 !important; /* Magenta */
+  box-shadow: 0 0 0 3px rgba(148, 11, 146, 0.1) !important; /* Subtle magenta glow */
+}
+
+/* Dark Mode Overrides for Filter Dropdown */
+body.dark-mode .filter-toggle-btn {
+  background-color: #3C0753 !important;
+  border-color: #720455 !important;
+}
+
+body.dark-mode .filter-dropdown {
+  background-color: #3C0753 !important;
+  border-color: #720455 !important;
+}
+
+body.dark-mode .filter-dropdown h3,
+body.dark-mode .filter-group label {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .filter-dropdown select,
+body.dark-mode .filter-dropdown input {
+  background-color: #030637 !important;
+  border-color: #720455 !important;
+  color: white !important;
+}
+
+body.dark-mode .filter-dropdown button.btn-save {
+  background-color: #910A67 !important;
+}

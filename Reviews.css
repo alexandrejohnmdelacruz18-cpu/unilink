@@ -1,0 +1,60 @@
+/* src/styles/Reviews.css */
+
+.star-rating-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.star-btn:hover {
+  transform: scale(1.2);
+}
+
+.review-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* --- TRUE BLACK DARK MODE OVERRIDES --- */
+body.dark-theme .review-card {
+  background-color: #121212 !important;
+  border-color: #262626 !important;
+}
+
+body.dark-theme .reviewer-info {
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .review-text {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .review-date {
+  color: #64748b !important;
+}
